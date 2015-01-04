@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Name_evizitei-sandbox-webapp
+- hosts: security_group_evizitei-sandbox
   tasks:
     - name: test connection
       ping:
