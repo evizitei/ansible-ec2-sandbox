@@ -1,0 +1,5 @@
+---
+- hosts: security_group_evizitei-sandbox
+  tasks:
+    - name: all units report in
+      shell: echo Hello World
