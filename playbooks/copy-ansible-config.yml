@@ -1,0 +1,14 @@
+---
+- hosts: tag_Name_Ansible-BuildBox
+  tasks:
+    - name: remove ansible directory if it already exists
+      file: dest=/etc/ansible state=absent
+      sudo: yes
+    - name: make sure ansible directory exists
+      file: dest=/etc/ansible state=directory mode=0755 owner=ec2-user
+              group=ec2-user
+      sudo: yes
+    - name: copy ansible config file up to ansible build box
+      copy: src=~/Code/instructure/sandbox/ansible/ansible.cfg 
+              dest=/etc/ansible/ansible.cfg mode=0644 owner=ec2-user
+              group=ec2-user
